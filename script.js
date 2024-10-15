@@ -35,12 +35,12 @@
 
     // TODO: actually check if username/password in database?
     if (document.querySelector(".formbox-login input#email").value.length > 0) {
-      showLoginMessage();
+      showLoginMessage(true);
       setTimeout(() => {
         hideLogin();
       }, LOGIN_DISAPPEAR_DELAY);
     } else {
-      document.querySelector("").textContent = "Invalid username or password";
+      showLoginMessage(false);
     }
     for (let input of document.querySelectorAll(".formbox-login input")) {
       input.value = "";
